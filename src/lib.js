@@ -169,6 +169,7 @@ function spawn(bin, options) {
             if (d === echoString) {
                 resolve(proc)
             } else if (d.includes("perl: warning: Setting locale failed.")) {
+                resolve(proc)
                 console.warn(d);
             } else {
                 reject(new Error(`Unexpected string on start: ${d}`))
